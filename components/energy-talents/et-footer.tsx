@@ -15,7 +15,7 @@ export function EtFooter() {
       <div className="mx-auto max-w-[1216px] px-6">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.1fr]">
           <div>
-            <Link href="/" aria-label={`${ET.name} — home`}>
+            <Link href="/" aria-label={`${ET.name} home`}>
               <EtWordmark width={40} height={30} />
             </Link>
 

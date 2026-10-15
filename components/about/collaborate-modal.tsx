@@ -82,10 +82,10 @@ export function CollaborateModal({
       phoneNo: value("phone"),
       // `context` distinguishes the two places this modal opens from — the
       // design-partner CTA and the closing panel.
-      leadSource: `About — ${context}`,
+      leadSource: `About: ${context}`,
       formData: {
-        Organization: value("org") || "—",
-        "What they're working on": value("note") || "—",
+        Organization: value("org") || "N/A",
+        "What they're working on": value("note") || "N/A",
       },
     });
 
@@ -99,16 +99,16 @@ export function CollaborateModal({
 
     setError(result.message);
     setMailtoHref(
-      leadMailto(SITE.email, `${context} — ${value("org") || submittedName}`, [
+      leadMailto(SITE.email, `${context} (${value("org") || submittedName})`, [
         `Enquiry: ${context}`,
         "",
         `Name: ${submittedName}`,
         `Email: ${value("email")}`,
         `Phone: ${value("phone")}`,
-        `Organization: ${value("org") || "—"}`,
+        `Organization: ${value("org") || "N/A"}`,
         "",
         "What they're working on:",
-        value("note") || "—",
+        value("note") || "N/A",
       ])
     );
   };
@@ -150,7 +150,7 @@ export function CollaborateModal({
                 id={`${ids}-title`}
                 className="text-[1.4rem] leading-tight font-semibold tracking-[-0.015em]"
               >
-                {sent ? "Thanks — we're on it." : "Tell us where to start."}
+                {sent ? "Thanks, we're on it." : "Tell us where to start."}
               </h2>
             </div>
             <button

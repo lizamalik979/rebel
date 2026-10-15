@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
   // Refuse rather than accept-everything when unconfigured: an open endpoint
   // lets anyone force cache churn on the site.
   if (!secret) {
-    console.error("[revalidate] REVALIDATE_SECRET is not set — rejecting");
+    console.error("[revalidate] REVALIDATE_SECRET is not set; rejecting");
     return NextResponse.json(
       { success: false, message: "Revalidation is not configured." },
       { status: 500 }

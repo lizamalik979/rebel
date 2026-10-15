@@ -48,7 +48,6 @@ export function PostCard({ post }: { post: BlogPost }) {
         )}
 
         <div className="mt-auto flex items-center gap-3 pt-4">
-          <span aria-hidden="true" className="h-px w-7 bg-black/15" />
           <span
             aria-hidden="true"
             className="grid size-9 place-items-center rounded-lg bg-ink font-mono text-[0.62rem] text-white"

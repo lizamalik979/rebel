@@ -29,7 +29,7 @@ export function Principles() {
           </h2>
         </div>
         <p className="max-w-[34ch] text-[0.95rem] leading-relaxed text-[#a8a8a8]">
-          The constitution of Rebel Labz — the commitments every system we build
+          The constitution of Rebel Labz: the commitments every system we build
           is measured against. Each principle runs its own live signature.
         </p>
       </div>

@@ -88,7 +88,7 @@ export const ET_FAQS = [
   {
     question: "How fast can you mobilize a crew?",
     answer:
-      "For disciplines we hold pre-cleared standby pools, under 72 hours from instruction to on-site — medicals, certifications and travel included. Scarce or highly specialised roles typically run two to four weeks. Tell us the window in the form and we'll confirm what's realistic in the first reply.",
+      "For disciplines we hold pre-cleared standby pools, under 72 hours from instruction to on-site, with medicals, certifications and travel included. Scarce or highly specialised roles typically run two to four weeks. Tell us the window in the form and we'll confirm what's realistic in the first reply.",
   },
   {
     question: "Do contractors pay any fees?",
@@ -108,12 +108,12 @@ export const ET_FAQS = [
   {
     question: "How are certifications verified?",
     answer:
-      "Every certificate is checked at source with the issuing body, not taken from a scan, and tracked for expiry inside Talent Cloud. Anything approaching expiry triggers an automatic hold — we would rather stop a mobilization than send an uncertified worker to site.",
+      "Every certificate is checked at source with the issuing body, not taken from a scan, and tracked for expiry inside Talent Cloud. Anything approaching expiry triggers an automatic hold. We would rather stop a mobilization than send an uncertified worker to site.",
   },
   {
     question: "Is my project information confidential?",
     answer:
-      "Yes. Enquiries are held under GDPR-aligned controls across all four hubs and shared only with the coordinators working your requirement. We're happy to work under your NDA before any detail is exchanged — just say so in the message field.",
+      "Yes. Enquiries are held under GDPR-aligned controls across all four hubs and shared only with the coordinators working your requirement. We're happy to work under your NDA before any detail is exchanged. Just say so in the message field.",
   },
 ];
 

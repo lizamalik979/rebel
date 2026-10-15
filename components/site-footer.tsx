@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { HomeLink } from "@/components/home-link";
 import { SITE, type NavLink } from "@/lib/content";
 import { getSiteFooter } from "@/lib/footer-menu-api";
 
@@ -56,14 +57,16 @@ export async function SiteFooter() {
     <footer className="border-t border-white/10 bg-ink">
       <div className="mx-auto grid max-w-(--spacing-shell) gap-[clamp(28px,4vw,64px)] px-6 pt-14 pb-10 sm:px-7 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
-          <Image
-            src="/brand/logo.svg"
-            alt={SITE.name}
-            width={748}
-            height={173}
-            loading="lazy"
-            className="h-[30px] w-auto self-start"
-          />
+          <HomeLink aria-label={`${SITE.name} home`} className="self-start">
+            <Image
+              src="/brand/logo.svg"
+              alt={SITE.name}
+              width={748}
+              height={173}
+              loading="lazy"
+              className="h-[30px] w-auto"
+            />
+          </HomeLink>
           <p className="max-w-[30ch] text-[0.85rem] leading-relaxed text-[#7a7a7a]">
             {tagline}
           </p>

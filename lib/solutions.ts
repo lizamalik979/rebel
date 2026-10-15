@@ -59,7 +59,7 @@ export const DECISION_INTELLIGENCE: Solution = {
     {
       badge: "01 // Strategy",
       title: "Enterprise Intelligence Strategy",
-      body: "Aligning data, AI, and people into one operating model — not a slide deck.",
+      body: "Aligning data, AI, and people into one operating model, not a slide deck.",
       bullets: [
         "Operating-model design across data, AI, and teams",
         "Decision inventory and prioritization",
@@ -87,7 +87,7 @@ export const DECISION_INTELLIGENCE: Solution = {
       bullets: [
         "Governed memory core inside your perimeter",
         "Lineage on every read and write",
-        "Stack-agnostic — layers on what you run",
+        "Stack-agnostic: layers on what you run",
       ],
       image: "/solutions/di-foundations.jpg",
       alt: "Isometric illustration of governed data blocks on a network",
@@ -95,7 +95,7 @@ export const DECISION_INTELLIGENCE: Solution = {
     {
       badge: "04 // Platforms",
       title: "Enterprise AI Platforms & Agents",
-      body: "Built once, reused everywhere — not reinvented per project.",
+      body: "Built once, reused everywhere, not reinvented per project.",
       bullets: [
         "Reusable agent mesh across business units",
         "Scoped permissions with replayable audit trails",
@@ -143,7 +143,7 @@ export const DECISION_INTELLIGENCE: Solution = {
       question:
         "How long does it take to deploy an Enterprise AI Platform with Rebel Labz?",
       answer:
-        "A working pilot on a real decision runs 4–6 weeks from kickoff. Production hardening typically follows within a quarter — and because the platform is reusable, the second and third use cases deploy in a fraction of the time.",
+        "A working pilot on a real decision runs 4–6 weeks from kickoff. Production hardening typically follows within a quarter, and because the platform is reusable, the second and third use cases deploy in a fraction of the time.",
     },
     {
       question:
@@ -155,7 +155,7 @@ export const DECISION_INTELLIGENCE: Solution = {
       question:
         "Can Rebel Labz integrate with our existing enterprise data stack?",
       answer:
-        "Yes — we are deliberately stack-agnostic. We connect to your existing warehouse, lakehouse, and operational systems rather than replacing them, so the memory core layers on top of what you already run.",
+        "Yes. We are deliberately stack-agnostic. We connect to your existing warehouse, lakehouse, and operational systems rather than replacing them, so the memory core layers on top of what you already run.",
     },
   ],
   interests: [

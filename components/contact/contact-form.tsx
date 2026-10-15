@@ -43,7 +43,7 @@ export function ContactForm() {
     const submittedName = value("name");
     const detail = {
       Topic: topic,
-      Organization: value("org") || "—",
+      Organization: value("org") || "N/A",
       Timeline: value("timeline"),
       "The problem": value("msg"),
     };
@@ -57,7 +57,7 @@ export function ContactForm() {
       phoneNo: value("phone"),
       // The topic is in the source so the dashboard can tell a press enquiry
       // from a project without opening the row.
-      leadSource: `Contact — ${topic}`,
+      leadSource: `Contact: ${topic}`,
       formData: detail,
     });
 
@@ -71,12 +71,12 @@ export function ContactForm() {
 
     setError(result.message);
     setMailtoHref(
-      leadMailto(SITE.email, `${topic} — ${value("org") || submittedName}`, [
+      leadMailto(SITE.email, `${topic} (${value("org") || submittedName})`, [
         `Topic: ${topic}`,
         `Name: ${submittedName}`,
         `Email: ${value("email")}`,
         `Phone: ${value("phone")}`,
-        `Organization: ${value("org") || "—"}`,
+        `Organization: ${value("org") || "N/A"}`,
         `Timeline: ${value("timeline")}`,
         "",
         "The problem:",
@@ -100,7 +100,7 @@ export function ContactForm() {
             Signal received
           </p>
           <h3 className="text-[1.6rem] font-semibold tracking-[-0.015em]">
-            Thanks{firstName && `, ${firstName}`} — we&apos;re on it.
+            Thanks{firstName && `, ${firstName}`}. We&apos;re on it.
           </h3>
           <p className="max-w-[46ch] text-[0.95rem] leading-[1.65] text-light-fg-2">
             Your note is in the lab queue under{" "}
@@ -195,7 +195,7 @@ export function ContactForm() {
           </label>
         </div>
 
-        <div className="grid grid-cols-1 gap-4.5 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4.5 sm:grid-cols-2">
           <label htmlFor={`${ids}-phone`} className="flex flex-col gap-2.25">
             <span className={LABEL}>Phone *</span>
             <input
@@ -219,20 +219,23 @@ export function ContactForm() {
               className={FIELD}
             />
           </label>
-          <label htmlFor={`${ids}-timeline`} className="flex flex-col gap-2.25">
-            <span className={LABEL}>Timeline</span>
-            <select
-              id={`${ids}-timeline`}
-              name="timeline"
-              defaultValue={TIMELINES[0]}
-              className={FIELD}
-            >
-              {TIMELINES.map((timeline) => (
-                <option key={timeline}>{timeline}</option>
-              ))}
-            </select>
-          </label>
         </div>
+
+        {/* Own row, as on the solution-page form: in a third column the
+            options were cut off mid-word. */}
+        <label htmlFor={`${ids}-timeline`} className="flex flex-col gap-2.25">
+          <span className={LABEL}>Timeline</span>
+          <select
+            id={`${ids}-timeline`}
+            name="timeline"
+            defaultValue={TIMELINES[0]}
+            className={FIELD}
+          >
+            {TIMELINES.map((timeline) => (
+              <option key={timeline}>{timeline}</option>
+            ))}
+          </select>
+        </label>
 
         <label htmlFor={`${ids}-msg`} className="flex flex-col gap-2.25">
           <span className={LABEL}>The problem *</span>

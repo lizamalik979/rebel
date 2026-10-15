@@ -97,8 +97,7 @@ export function BlogBoard({
           data-reveal
           className="mt-[clamp(32px,5vh,56px)] flex flex-wrap items-center justify-between gap-4 border-b border-black/[0.12] pb-4"
         >
-          <p className="flex items-center gap-3 font-mono text-[0.66rem] tracking-[0.18em] text-brand uppercase">
-            <span aria-hidden="true" className="inline-block h-px w-8 bg-brand" />
+          <p className="font-mono text-[0.66rem] tracking-[0.18em] text-brand uppercase">
             {activeCategory ? activeCategory.name : "Latest articles"}
           </p>
           <p className="font-mono text-[0.66rem] tracking-[0.12em] text-light-muted-2 uppercase">
@@ -119,7 +118,7 @@ export function BlogBoard({
             <p className="text-[0.95rem] text-light-fg-2">
               {category
                 ? `Nothing published under ${activeCategory?.name ?? "this category"} yet.`
-                : "No articles published yet — the first field notes are being written."}
+                : "No articles published yet. The first field notes are being written."}
             </p>
             {category && (
               <Link

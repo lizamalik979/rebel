@@ -52,7 +52,7 @@ export const STORY_CARDS: StoryCard[] = [
   {
     stage: "Already Running",
     title: "The memory core",
-    body: "Live in pilot with design partners across logistics, financial risk, and public research — small enough to run on modest hardware.",
+    body: "Live in pilot with design partners across logistics, financial risk, and public research, and small enough to run on modest hardware.",
   },
   {
     stage: "In Build",
@@ -70,25 +70,25 @@ export const VALUES: Value[] = [
   {
     code: "01 // TRANSPARENCY",
     title: "Radical Transparency",
-    desc: "Every decision path is open, logged, and replayable — no black boxes, ever.",
+    desc: "Every decision path is open, logged, and replayable. No black boxes, ever.",
     metric: "100% auditable decisions",
   },
   {
     code: "02 // VELOCITY",
     title: "Speed Without Compromise",
-    desc: "Pilots ship in weeks, not quarters — without cutting the constitution short.",
+    desc: "Pilots ship in weeks, not quarters, without cutting the constitution short.",
     metric: "4–6 weeks to pilot",
   },
   {
     code: "03 // CRAFT",
     title: "Engineering Perfection",
-    desc: "Frugal, elegant systems over computational excess — measured, not assumed.",
+    desc: "Frugal, elegant systems over computational excess: measured, not assumed.",
     metric: "Runs on modest hardware",
   },
   {
     code: "04 // DISRUPTION",
     title: "Bold Disruption",
-    desc: "We ship the uncomfortable idea if it is the right one — capability follows judgment.",
+    desc: "We ship the uncomfortable idea if it is the right one. Capability follows judgment.",
     metric: "6 design partners",
   },
 ];
@@ -127,7 +127,7 @@ export const BADGES: Badge[] = [
   {
     code: "DATA_SOV",
     title: "Data Sovereignty",
-    desc: "Memory cores deploy inside your perimeter — your data never leaves.",
+    desc: "Memory cores deploy inside your perimeter, so your data never leaves.",
   },
   {
     code: "ZERO_TRUST",
@@ -142,7 +142,7 @@ export const BADGES: Badge[] = [
   {
     code: "FRUGAL_BM",
     title: "Frugal Compute Benchmark",
-    desc: "Compute overhead measured and published — not just claimed.",
+    desc: "Compute overhead measured and published, not just claimed.",
   },
 ];
 
@@ -171,22 +171,22 @@ export const ABOUT_FAQS: AboutFaq[] = [
   {
     question: "You're a new lab. Why should we trust you with this?",
     answer:
-      "You shouldn't — not on reputation, anyway. We are early, and we say so. What we offer instead is a published constitution to hold us to, a short paid pilot before any commitment, and systems small enough that you can audit them yourself rather than take our word for it.",
+      "You shouldn't, not on reputation, anyway. We are early, and we say so. What we offer instead is a published constitution to hold us to, a short paid pilot before any commitment, and systems small enough that you can audit them yourself rather than take our word for it.",
   },
   {
     question: "Who do you work with?",
     answer:
-      "Enterprises, financial institutions, health networks, and public research bodies — anyone with a real decision problem and the willingness to open their process to an audit trail. Right now we take on a small number of design partners at a time.",
+      "Enterprises, financial institutions, health networks, and public research bodies: anyone with a real decision problem and the willingness to open their process to an audit trail. Right now we take on a small number of design partners at a time.",
   },
   {
     question: "What's your methodology?",
     answer:
-      "Discover, Architect, Pilot, Deploy, Evolve — five stages, four to six weeks to a working pilot, then a continuous feedback loop in production.",
+      "Discover, Architect, Pilot, Deploy, Evolve: five stages, four to six weeks to a working pilot, then a continuous feedback loop in production.",
   },
   {
     question: "How global is the lab?",
     answer:
-      "Remote-first by design — nine people working from wherever the problem is, with the core team in India and pilots running across timezones.",
+      "Remote-first by design: nine people working from wherever the problem is, with the core team in India and pilots running across timezones.",
   },
 ];
 
@@ -226,7 +226,7 @@ export const ABOUT = {
   hero: {
     badge: `Founded ${FOUNDED_YEAR} · Year ${YEAR_WORD}`,
     title: "A new lab, built on an old idea",
-    lede: "Rebel Labz is young on purpose. No legacy stack to defend, no decade of consulting habits to unlearn — just a small team building adaptive intelligence the way we believe it should have been built from the start.",
+    lede: "Rebel Labz is young on purpose. No legacy stack to defend, no decade of consulting habits to unlearn. Just a small team building adaptive intelligence the way we believe it should have been built from the start.",
     primaryCta: { label: "See where we are", href: "#story" },
     secondaryCta: { label: "Partner With Us", href: "#cta" },
     /** Corner captions on the orbital canvas. */
@@ -259,7 +259,7 @@ export const ABOUT = {
     eyebrow: "Design Partners",
     heading: "We would rather earn it than claim it",
     aside:
-      "No logo wall yet — we are early and our partners are still under NDA. Here is what we offer instead.",
+      "No logo wall yet. We are early and our partners are still under NDA. Here is what we offer instead.",
     cohort: {
       eyebrow: "Cohort Two · Now Open",
       body: "We take on a handful of design partners at a time, so the lab stays closer to the work than to the pipeline.",
@@ -276,7 +276,7 @@ export const ABOUT = {
     partners: {
       eyebrow: "For Clients & Partners",
       heading: "Bring us a real problem",
-      body: "We scope fast, ship a working pilot in weeks, and measure success against your outcome — not our hours.",
+      body: "We scope fast, ship a working pilot in weeks, and measure success against your outcome, not our hours.",
       // Opens the collaborate modal rather than navigating.
       cta: { label: "Partner With Us" },
     },
@@ -284,7 +284,7 @@ export const ABOUT = {
       eyebrow: "For Careers & Talent",
       heading: "Come build the constitution.",
       /** `{roles}` is replaced with the live opening count. */
-      body: "Remote-first, open by design, measured on outcomes — {roles} open roles across research, engineering, and ops.",
+      body: "Remote-first, open by design, measured on outcomes, with {roles} open roles across research, engineering, and ops.",
       cta: { label: "Join the Lab", href: "/careers" },
     },
   },

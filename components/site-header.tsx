@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+import { HomeLink } from "@/components/home-link";
 import { useEffect, useId, useState } from "react";
 
 import {
@@ -108,10 +110,9 @@ export function SiteHeader({
   return (
     <header className="sticky top-0 z-50 px-4">
       <div className="mx-auto mt-3.5 flex h-16 w-full max-w-(--spacing-shell-nav) items-center gap-4 rounded-[18px] border border-white/10 bg-[#0c0c0c]/75 py-2 pr-2.5 pl-5 shadow-[0_14px_44px_-22px_rgb(0_0_0/0.95),inset_0_1px_0_rgb(255_255_255/0.05)] backdrop-blur-lg backdrop-saturate-150 lg:h-17 lg:pl-[22px]">
-        <Link
-          href="/"
+        <HomeLink
           className="flex flex-none items-center"
-          aria-label="Rebel Labz — home"
+          aria-label="Rebel Labz home"
         >
           <Image
             src="/brand/logo.svg"
@@ -121,7 +122,7 @@ export function SiteHeader({
             priority
             className="h-7 w-auto lg:h-[31px]"
           />
-        </Link>
+        </HomeLink>
 
         {/* ── Desktop navigation ─────────────────────────────────────── */}
         <nav

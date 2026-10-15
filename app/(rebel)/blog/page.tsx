@@ -7,7 +7,7 @@ import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/seo";
 import { getBlogCategories, getPostsPage, POSTS_PER_PAGE } from "@/lib/blog-api";
 
 const description =
-  "Research notes, build logs, and honest reads on adaptive systems — written by the people shipping them.";
+  "Research notes, build logs, and honest reads on adaptive systems, written by the people shipping them.";
 
 export const metadata: Metadata = {
   title: "Blog",

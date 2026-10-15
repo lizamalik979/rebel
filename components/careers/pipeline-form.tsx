@@ -120,11 +120,11 @@ export function PipelineForm() {
             Added to the pipeline
           </p>
           <h3 className="text-2xl font-semibold tracking-[-0.015em]">
-            Thanks{firstName && `, ${firstName}`} — you&apos;re in.
+            Thanks{firstName && `, ${firstName}`}, you&apos;re in.
           </h3>
           <p className="text-[0.92rem] leading-relaxed text-light-fg-2">
             You&apos;re in the pipeline{cvName && `, CV attached (${cvName})`}. A
-            human reviews every profile — if something changes in the meantime,
+            human reviews every profile. If something changes in the meantime,
             write to us at{" "}
             <a
               href={`mailto:${SITE.email}`}

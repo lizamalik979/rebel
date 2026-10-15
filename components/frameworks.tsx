@@ -102,7 +102,7 @@ export function Frameworks() {
               <span className="text-brand">.</span>
             </h2>
             <p className="text-[1.02rem] leading-relaxed text-dark-fg-3">
-              Where the philosophy meets real enterprises — four intelligence
+              Where the philosophy meets real enterprises: four intelligence
               pillars that prove what the Lab believes.
             </p>
           </div>
@@ -171,7 +171,9 @@ export function Frameworks() {
                     </p>
                     <span
                       aria-hidden="true"
-                      className="mb-2.5 block h-0.5 w-[26px] bg-white/20 transition-[width,background-color] duration-500 ease-(--ease-out-soft) group-hover:w-16 group-hover:bg-brand"
+                      // Hidden at rest and drawn in on hover only: as a resting
+                      // stub it read as a stray dash under the kicker.
+                      className="mb-2.5 block h-0.5 w-0 bg-brand transition-[width] duration-500 ease-(--ease-out-soft) group-hover:w-16"
                     />
                     <h3 className="mb-2.5 text-[clamp(1.12rem,1.7vw,1.32rem)] leading-tight font-semibold tracking-[-0.015em] transition-colors duration-400 group-hover:text-brand">
                       {pillar.title}

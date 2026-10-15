@@ -20,7 +20,7 @@ const OG_IMAGE = {
   url: "/opengraph-image.png",
   width: 1200,
   height: 630,
-  alt: `${SITE.name} — ${SITE.tagline}`,
+  alt: `${SITE.name}: ${SITE.tagline}`,
 };
 
 export const OG_DEFAULTS: Metadata["openGraph"] = {

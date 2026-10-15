@@ -6,7 +6,7 @@ import { SITE } from "@/lib/content";
 import { leadMailto, submitLead } from "@/lib/lead-api";
 
 const FIELD =
-  "min-w-0 rounded-[10px] border border-black/[0.12] bg-paper px-4 py-3.5 text-[0.88rem] text-light-fg outline-brand placeholder:text-light-faint";
+  "min-w-0 rounded-[10px] border border-black/[0.12] bg-paper px-4 py-2.5 text-[0.88rem] text-light-fg outline-brand placeholder:text-light-faint";
 const LABEL =
   "font-mono text-[0.6rem] tracking-[0.14em] text-light-muted-2 uppercase";
 
@@ -48,9 +48,9 @@ export function CollaborationForm({
       name: submittedName,
       email: value("email"),
       phoneNo: value("phone"),
-      leadSource: `Solutions — ${subjectPrefix}`,
+      leadSource: `Solutions: ${subjectPrefix}`,
       formData: {
-        Organization: value("org") || "—",
+        Organization: value("org") || "N/A",
         "Interested in": value("interest"),
         "The decision": value("decision"),
       },
@@ -66,11 +66,11 @@ export function CollaborationForm({
 
     setError(result.message);
     setMailtoHref(
-      leadMailto(SITE.email, `${subjectPrefix} — ${value("org") || submittedName}`, [
+      leadMailto(SITE.email, `${subjectPrefix} (${value("org") || submittedName})`, [
         `Name: ${submittedName}`,
         `Email: ${value("email")}`,
         `Phone: ${value("phone")}`,
-        `Organization: ${value("org") || "—"}`,
+        `Organization: ${value("org") || "N/A"}`,
         `Interested in: ${value("interest")}`,
         "",
         "The decision:",
@@ -84,7 +84,7 @@ export function CollaborationForm({
       <div
         data-reveal="fade-left"
         data-reveal-delay="1"
-        className="rounded-[22px] border border-black/[0.14] bg-paper p-[clamp(26px,3vw,38px)] shadow-[0_24px_60px_-40px_rgb(0_0_0/0.35)]"
+        className="rounded-[22px] border border-black/[0.14] bg-paper p-[clamp(22px,2.4vw,30px)] shadow-[0_24px_60px_-40px_rgb(0_0_0/0.35)]"
       >
         <div className="flex flex-col items-start gap-4 px-1 py-5">
           <p className="inline-flex items-center gap-2 font-mono text-[0.62rem] tracking-[0.2em] text-brand uppercase">
@@ -95,7 +95,7 @@ export function CollaborationForm({
             Signal received
           </p>
           <h3 className="text-2xl font-semibold tracking-[-0.015em]">
-            Thanks{name && `, ${name}`} — we&apos;re on it.
+            Thanks{name && `, ${name}`}. We&apos;re on it.
           </h3>
           <p className="text-[0.92rem] leading-relaxed text-light-fg-2">
             Your mail client should have opened with the request ready to send.
@@ -124,9 +124,9 @@ export function CollaborationForm({
     <div
       data-reveal="fade-left"
       data-reveal-delay="1"
-      className="rounded-[22px] border border-black/[0.14] bg-paper p-[clamp(26px,3vw,38px)] shadow-[0_24px_60px_-40px_rgb(0_0_0/0.35)]"
+      className="rounded-[22px] border border-black/[0.14] bg-paper p-[clamp(22px,2.4vw,30px)] shadow-[0_24px_60px_-40px_rgb(0_0_0/0.35)]"
     >
-      <div className="mb-6.5 flex items-center justify-between gap-3">
+      <div className="mb-5 flex items-center justify-between gap-3">
         <p className="inline-flex items-center gap-2 font-mono text-[0.62rem] tracking-[0.2em] text-brand uppercase">
           <span aria-hidden="true" className="inline-block size-1.5 bg-brand" />
           Start a collaboration
@@ -136,9 +136,9 @@ export function CollaborationForm({
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-        <div className="grid grid-cols-1 gap-4.5 sm:grid-cols-2">
-          <label htmlFor={`${ids}-name`} className="flex flex-col gap-2.25">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
+        <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4">
+          <label htmlFor={`${ids}-name`} className="flex flex-col gap-1.5">
             <span className={LABEL}>Name *</span>
             <input
               id={`${ids}-name`}
@@ -150,7 +150,7 @@ export function CollaborationForm({
               className={FIELD}
             />
           </label>
-          <label htmlFor={`${ids}-email`} className="flex flex-col gap-2.25">
+          <label htmlFor={`${ids}-email`} className="flex flex-col gap-1.5">
             <span className={LABEL}>Work Email *</span>
             <input
               id={`${ids}-email`}
@@ -164,8 +164,8 @@ export function CollaborationForm({
           </label>
         </div>
 
-        <div className="grid grid-cols-1 gap-4.5 sm:grid-cols-3">
-          <label htmlFor={`${ids}-phone`} className="flex flex-col gap-2.25">
+        <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:gap-4">
+          <label htmlFor={`${ids}-phone`} className="flex flex-col gap-1.5">
             <span className={LABEL}>Phone *</span>
             <input
               id={`${ids}-phone`}
@@ -177,7 +177,7 @@ export function CollaborationForm({
               className={FIELD}
             />
           </label>
-          <label htmlFor={`${ids}-org`} className="flex flex-col gap-2.25">
+          <label htmlFor={`${ids}-org`} className="flex flex-col gap-1.5">
             <span className={LABEL}>Organization</span>
             <input
               id={`${ids}-org`}
@@ -188,22 +188,25 @@ export function CollaborationForm({
               className={FIELD}
             />
           </label>
-          <label htmlFor={`${ids}-interest`} className="flex flex-col gap-2.25">
-            <span className={LABEL}>Interested In</span>
-            <select
-              id={`${ids}-interest`}
-              name="interest"
-              defaultValue={interests[0]}
-              className={FIELD}
-            >
-              {interests.map((interest) => (
-                <option key={interest}>{interest}</option>
-              ))}
-            </select>
-          </label>
         </div>
 
-        <label htmlFor={`${ids}-decision`} className="flex flex-col gap-2.25">
+        {/* Full row: in a third column the offering names were truncated to
+            "Enterprise Int…" and the phone/organization placeholders clipped. */}
+        <label htmlFor={`${ids}-interest`} className="flex flex-col gap-1.5">
+          <span className={LABEL}>Interested In</span>
+          <select
+            id={`${ids}-interest`}
+            name="interest"
+            defaultValue={interests[0]}
+            className={FIELD}
+          >
+            {interests.map((interest) => (
+              <option key={interest}>{interest}</option>
+            ))}
+          </select>
+        </label>
+
+        <label htmlFor={`${ids}-decision`} className="flex flex-col gap-1.5">
           <span className={LABEL}>The Decision *</span>
           <textarea
             id={`${ids}-decision`}
@@ -215,7 +218,7 @@ export function CollaborationForm({
           />
         </label>
 
-        <div className="mt-1 flex flex-col gap-3.5">
+        <div className="mt-1 flex flex-col gap-3">
           {error && (
             <p role="alert" className="text-[0.82rem] leading-snug text-brand">
               {error}{" "}
@@ -232,7 +235,7 @@ export function CollaborationForm({
           <button
             type="submit"
             disabled={sending}
-            className="group flex cursor-pointer items-center justify-center gap-2.5 rounded-xl bg-light-fg px-5.5 py-4 text-[0.92rem] font-semibold text-white transition-colors duration-300 hover:bg-brand disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-light-fg"
+            className="group flex cursor-pointer items-center justify-center gap-2.5 rounded-xl bg-light-fg px-5.5 py-3 text-[0.92rem] font-semibold text-white transition-colors duration-300 hover:bg-brand disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-light-fg"
           >
             {sending ? "Sending…" : "Request collaboration"}
             <span
