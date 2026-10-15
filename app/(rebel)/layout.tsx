@@ -14,11 +14,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const description =
-  "An intelligence lab — researching, engineering, and democratizing intelligence. We build adaptive systems that bridge human cognition, machine memory, and collective wisdom.";
+  "An intelligence lab researching, engineering, and democratizing intelligence. We build adaptive systems that bridge human cognition, machine memory, and collective wisdom.";
 
 export const metadata: Metadata = {
   title: {
-    default: "Rebel Labz — Architecting the evolution of intelligence",
+    default: "Rebel Labz: Architecting the evolution of intelligence",
     template: "%s · Rebel Labz",
   },
   description,
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Rebel Labz",
-    title: "Rebel Labz — Architecting the evolution of intelligence",
+    title: "Rebel Labz: Architecting the evolution of intelligence",
     description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rebel Labz — Architecting the evolution of intelligence",
+    title: "Rebel Labz: Architecting the evolution of intelligence",
     description,
   },
 };

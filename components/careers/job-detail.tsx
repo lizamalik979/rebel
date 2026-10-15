@@ -73,7 +73,7 @@ export function JobDetail({ role }: { role: Role }) {
                   <strong className="font-semibold text-light-fg">
                     {perk.title}
                   </strong>
-                  {perk.desc ? ` — ${perk.desc}` : ""}
+                  {perk.desc ? `: ${perk.desc}` : ""}
                 </span>
               </li>
             ))}

@@ -42,7 +42,7 @@ export function NotFoundView() {
         </h1>
 
         <p className="mt-7 max-w-[52ch] text-[clamp(1rem,1.6vw,1.2rem)] leading-[1.65] text-dark-fg-3">
-          Not everything we&apos;re building has been published — and some of it
+          Not everything we&apos;re building has been published, and some of it
           has been retired. Whatever you were after, one of these will get you
           closer.
         </p>
@@ -56,7 +56,7 @@ export function NotFoundView() {
             <RequestedPath />
           </p>
           <p className="mt-2.5 border-t border-white/[0.08] pt-2.5 font-mono text-[0.72rem] text-dark-muted">
-            no such route — status 404
+            no such route, status 404
           </p>
         </div>
 

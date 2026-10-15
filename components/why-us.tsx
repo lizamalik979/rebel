@@ -69,13 +69,9 @@ export function WhyUs() {
               <h3 className="mt-2 max-w-[18ch] text-[1.2rem] leading-snug font-semibold tracking-[-0.01em]">
                 {item.title}
               </h3>
-              <p className="mt-3.5 mb-7 text-[0.9rem] leading-relaxed text-light-muted">
+              <p className="mt-3.5 text-[0.9rem] leading-relaxed text-light-muted">
                 {item.body}
               </p>
-              <span
-                aria-hidden="true"
-                className="mt-auto h-0.5 w-[38px] bg-brand"
-              />
             </li>
           ))}
         </ul>

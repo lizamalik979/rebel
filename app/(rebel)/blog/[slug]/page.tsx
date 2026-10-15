@@ -315,8 +315,7 @@ export default async function BlogPostPage({ params }: Props) {
       {related.length > 0 && (
         <section className="bg-paper text-light-fg">
           <div className="mx-auto max-w-(--spacing-shell) px-6 py-[clamp(56px,9vh,100px)] sm:px-7">
-            <p className="mb-10 flex items-center gap-3 font-mono text-[0.66rem] tracking-[0.18em] text-brand uppercase">
-              <span aria-hidden="true" className="inline-block h-px w-8 bg-brand" />
+            <p className="mb-10 font-mono text-[0.66rem] tracking-[0.18em] text-brand uppercase">
               Related articles
             </p>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

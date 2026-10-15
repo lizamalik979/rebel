@@ -65,7 +65,7 @@ export const PRIVACY: { intro: string; sections: LegalSection[] } = {
       bullets: [
         "Your name and email address",
         "Your organisation, if you give one",
-        "What you are working on, or why you are applying — whatever you type",
+        "What you are working on, or why you are applying (whatever you type)",
         "For applications: the role you applied for, and the filename of a CV you selected",
       ],
     },
@@ -78,7 +78,7 @@ export const PRIVACY: { intro: string; sections: LegalSection[] } = {
     {
       heading: "Why we use it, and on what basis",
       body: [
-        "We use what you send only to reply to you and to take the conversation forward — a collaboration enquiry, or an application for a role. We do not sell it, and we do not add you to a mailing list.",
+        "We use what you send only to reply to you and to take the conversation forward, whether a collaboration enquiry or an application for a role. We do not sell it, and we do not add you to a mailing list.",
         "Our lawful basis is your consent, given by choosing to send the email, and our legitimate interest in responding to enquiries about our work. For job applications it is the steps necessary to enter into a contract of employment at your request.",
       ],
     },
@@ -86,7 +86,7 @@ export const PRIVACY: { intro: string; sections: LegalSection[] } = {
       heading: "Who else sees it",
       body: [
         "Your email arrives in our email provider's inbox and is read by the people at the lab who need to act on it. We do not pass it to advertisers or data brokers.",
-        "Our email and hosting providers process it as part of delivering those services. «CONFIRM PROVIDERS AND ADD THEM HERE — e.g. Vercel for hosting, Google Workspace for email.»",
+        "Our email and hosting providers process it as part of delivering those services. «CONFIRM PROVIDERS AND ADD THEM HERE, e.g. Vercel for hosting, Google Workspace for email.»",
       ],
     },
     {
@@ -98,7 +98,7 @@ export const PRIVACY: { intro: string; sections: LegalSection[] } = {
     {
       heading: "Your rights",
       body: [
-        "You can ask us for a copy of what we hold about you, ask us to correct it, ask us to delete it, or object to us holding it at all. Write to us and we will act on it — there is no form to fill in and no account to create.",
+        "You can ask us for a copy of what we hold about you, ask us to correct it, ask us to delete it, or object to us holding it at all. Write to us and we will act on it. There is no form to fill in and no account to create.",
         `If you are in the UK or EU you also have the right to complain to your data protection authority. If you are in India you may raise a grievance with us first, and then with the Data Protection Board.`,
       ],
     },
@@ -113,7 +113,7 @@ export const PRIVACY: { intro: string; sections: LegalSection[] } = {
 
 export const TERMS: { intro: string; sections: LegalSection[] } = {
   intro:
-    "These terms cover your use of this website. They do not govern any engagement between us — that is set out separately in a signed agreement.",
+    "These terms cover your use of this website. They do not govern any engagement between us; that is set out separately in a signed agreement.",
   sections: [
     {
       heading: "Using this site",
@@ -150,7 +150,7 @@ export const TERMS: { intro: string; sections: LegalSection[] } = {
     {
       heading: "Availability and liability",
       body: [
-        "We make no promise that this site will be available without interruption or free of error. To the fullest extent the law allows, we are not liable for loss arising from your use of it — and nothing here limits liability that cannot lawfully be limited, including for death or personal injury caused by negligence, or for fraud.",
+        "We make no promise that this site will be available without interruption or free of error. To the fullest extent the law allows, we are not liable for loss arising from your use of it, and nothing here limits liability that cannot lawfully be limited, including for death or personal injury caused by negligence, or for fraud.",
       ],
     },
     {

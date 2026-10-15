@@ -47,16 +47,8 @@ function RoleSkeleton({ count }: { count: number }) {
 }
 
 type Props = {
-  /** The current page of published roles, already filtered and paged server-side. */
-  roles: Role[];
-  /** Total roles matching the active filter — drives the page count. */
-  total?: number;
   /** Section copy from the CMS — heading only; the listing is unaffected. */
   header: CareersContent["roles"];
-  /** Current 1-based page, from the URL. */
-  page?: number;
-  /** Active discipline, or "" for all — from the URL. */
-  discipline?: string;
   /**
    * Filter chips, "All Roles" first. Defaults to the static discipline list so
    * the board still renders if the CMS returned no tabs.
@@ -69,26 +61,22 @@ type Props = {
  * the page, so this is the sole client component in the careers route — the
  * surrounding sections stay server-rendered.
  *
- * Roles arrive as props rather than being imported: they come from the CMS,
- * which is fetched by the server component that renders this.
+ * Roles are fetched in the browser, straight from the CMS, including the
+ * first page. Server-rendering them made the careers page dynamic, so every
+ * visit waited on the CMS before anything appeared; now the page shell is
+ * static and only this list shows a skeleton while it loads.
  */
-export function RoleBoard({
-  header,
-  roles: initialRoles,
-  total: initialTotal = initialRoles.length,
-  page: initialPage = 1,
-  discipline: initialDiscipline = "",
-  filters = ROLE_FILTERS,
-}: Props) {
-  // The first page is server-rendered for SEO and first paint; every change
-  // after that is fetched straight from the CMS. Going back through Next for a
-  // full server re-render made each click wait on the whole page, and this list
-  // is the only part of it that actually changes.
-  const [roles, setRoles] = useState<Role[]>(initialRoles);
-  const [total, setTotal] = useState(initialTotal);
-  const [page, setPage] = useState(initialPage);
-  const [discipline, setDiscipline] = useState(initialDiscipline);
-  const [loading, setLoading] = useState(false);
+export function RoleBoard({ header, filters = ROLE_FILTERS }: Props) {
+  const [roles, setRoles] = useState<Role[]>([]);
+  const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(1);
+  const [discipline, setDiscipline] = useState("");
+  // Starts true: the first fetch fires on mount, and the skeleton must show
+  // from the very first paint rather than a flash of "No open roles".
+  const [loading, setLoading] = useState(true);
+  // Set when the CMS could not be reached, so a failure is not mistaken for
+  // "nothing is open".
+  const [failed, setFailed] = useState(false);
   const [expandedFilters, setExpandedFilters] = useState(false);
 
   // "All Roles" is the UI label for "no filter"; the URL simply omits the param.
@@ -111,24 +99,45 @@ export function RoleBoard({
     });
     if (nextDiscipline) params.set("category", nextDiscipline);
 
-    setLoading(true);
+    // No state is set before the await: callers flip `loading` themselves (it
+    // starts true for the first load), so this can run from the mount effect.
     try {
       // Same reasoning as the server fetch: a CMS that never answers must not
       // leave the board stuck on its skeleton forever.
       const res = await fetch(`${CMS_URL}/api/careers/client?${params}`, {
         signal: AbortSignal.timeout(8000),
       });
-      if (!res.ok || id !== requestId.current) return;
+      if (id !== requestId.current) return;
+      if (!res.ok) throw new Error(`CMS ${res.status}`);
       const data = await res.json();
       if (id !== requestId.current) return;
       setRoles(data.roles ?? []);
       setTotal(data.pagination?.totalCount ?? data.total ?? 0);
+      setFailed(false);
     } catch {
-      // Leave the current page on screen rather than blanking the board.
+      // Keep whatever page is on screen; the failed flag only replaces the list
+      // when there is nothing to show.
+      if (id === requestId.current) setFailed(true);
     } finally {
-      if (id === requestId.current) setLoading(false);
+      if (id === requestId.current) {
+        // Also committed here (not only in go()) so a load started from the
+        // URL leaves the chips and pager on the filter and page it asked for.
+        setPage(nextPage);
+        setDiscipline(nextDiscipline);
+        setLoading(false);
+      }
     }
   }, []);
+
+  /** Shows the skeleton and fetches; for event handlers, not effects. */
+  const load = useCallback(
+    (nextPage: number, nextDiscipline: string) => {
+      setLoading(true);
+      setFailed(false);
+      fetchRoles(nextPage, nextDiscipline);
+    },
+    [fetchRoles]
+  );
 
   /** Serialise the controls into a query string, omitting the defaults. */
   const toQuery = (nextPage: number, nextDiscipline: string) => {
@@ -145,26 +154,39 @@ export function RoleBoard({
     // pushState rather than router.push: the URL must stay shareable and the
     // back button must work, but nothing on the server needs to re-render.
     window.history.pushState(null, "", toQuery(nextPage, nextDiscipline));
-    fetchRoles(nextPage, nextDiscipline);
+    load(nextPage, nextDiscipline);
   };
 
   const changeFilter = (next: string) => go(1, next === "All Roles" ? "" : next);
   const changePage = (next: number) => go(next, discipline);
 
-  // Because the URL is driven with pushState, the back/forward buttons change
-  // it without React knowing — this puts the board back in step.
+  // Loads the list from whatever the URL says, so a shared link like
+  // /careers?discipline=Research&page=2 still opens on that filter and page.
+  // Runs on mount, and again on back/forward, which change the URL via
+  // pushState without React knowing.
   useEffect(() => {
-    const onPopState = () => {
+    const fromUrl = () => {
       const params = new URLSearchParams(window.location.search);
-      const nextDiscipline = params.get("discipline") ?? "";
-      const nextPage = Math.max(1, Number(params.get("page")) || 1);
-      setPage(nextPage);
-      setDiscipline(nextDiscipline);
-      fetchRoles(nextPage, nextDiscipline);
+      return {
+        page: Math.max(1, Number(params.get("page")) || 1),
+        discipline: params.get("discipline") ?? "",
+      };
+    };
+    const initial = fromUrl();
+    // fetchRoles only sets state after its await (loading already starts
+    // true), so this is a plain fetch-on-mount, not a synchronous cascade.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    fetchRoles(initial.page, initial.discipline);
+
+    const onPopState = () => {
+      const next = fromUrl();
+      setPage(next.page);
+      setDiscipline(next.discipline);
+      load(next.page, next.discipline);
     };
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
-  }, [fetchRoles]);
+  }, [fetchRoles, load]);
 
   /**
    * Chips shown in the bar. The active one is always included even when it
@@ -259,6 +281,22 @@ export function RoleBoard({
         <div data-reveal="fade-up" data-reveal-delay="2">
         {loading ? (
           <RoleSkeleton count={roles.length || ROLES_PER_PAGE} />
+        ) : failed && roles.length === 0 ? (
+          <div className="border border-black/[0.08] border-l-[3px] border-l-brand bg-paper px-6 py-12 text-center">
+            <p className="text-[1.02rem] font-semibold tracking-[-0.01em]">
+              We couldn&apos;t load the open roles.
+            </p>
+            <p className="mt-2 text-[0.92rem] text-light-muted">
+              Check your connection and try again.
+            </p>
+            <button
+              type="button"
+              onClick={() => load(page, discipline)}
+              className="mt-5 cursor-pointer rounded-full border border-black/20 px-5 py-2.5 font-mono text-[0.68rem] tracking-[0.12em] text-light-fg uppercase transition-colors duration-300 hover:bg-light-fg hover:text-white"
+            >
+              Try again
+            </button>
+          </div>
         ) : roles.length === 0 ? (
           /* Reached when the discipline has no openings, and also when the CMS
              is unreachable — better an honest message than a blank strip that
@@ -269,7 +307,7 @@ export function RoleBoard({
             </p>
             <p className="mt-2 text-[0.92rem] text-light-muted">
               {filter === "All Roles"
-                ? "Nothing is posted at the moment — check back soon, or reach out anyway."
+                ? "Nothing is posted at the moment. Check back soon, or reach out anyway."
                 : `Nothing open in ${filter} today. Try another discipline.`}
             </p>
           </div>
@@ -362,10 +400,15 @@ export function RoleBoard({
           </nav>
         )}
 
-        <p className="mt-4 text-center font-mono text-[0.68rem] tracking-[0.12em] text-light-faint uppercase">
+        <p
+          aria-live="polite"
+          className="mt-4 text-center font-mono text-[0.68rem] tracking-[0.12em] text-light-faint uppercase"
+        >
           {loading
-            ? "Loading…"
-            : `Showing ${roles.length} of ${total} ${total === 1 ? "role" : "roles"}`}
+            ? "Loading roles…"
+            : failed && roles.length === 0
+              ? ""
+              : `Showing ${roles.length} of ${total} ${total === 1 ? "role" : "roles"}`}
         </p>
 
       </div>

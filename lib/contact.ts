@@ -32,7 +32,7 @@ export const TOPICS = [
 export type Topic = (typeof TOPICS)[number];
 
 export const TIMELINES = [
-  "Exploring — no date yet",
+  "Exploring, no date yet",
   "Next quarter",
   "Within 30 days",
   "Urgent",
@@ -42,7 +42,7 @@ export const STEPS: Step[] = [
   {
     ident: "Step 01 · <48h",
     title: "We read and reply",
-    body: "A researcher — not a rep — reads your note and answers with a real opinion.",
+    body: "A researcher (not a rep) reads your note and answers with a real opinion.",
   },
   {
     ident: "Step 02 · Week 1",
@@ -52,7 +52,7 @@ export const STEPS: Step[] = [
   {
     ident: "Step 03 · Week 2",
     title: "Scoped proposal",
-    body: "Outcome, timeline, and price on one page — measured against your metric.",
+    body: "Outcome, timeline, and price on one page, measured against your metric.",
   },
   {
     ident: "Step 04 · Week 4–6",
@@ -65,7 +65,7 @@ export const CONTACT_FAQS: ContactFaq[] = [
   {
     question: "Do we need an AI strategy before contacting you?",
     answer:
-      "No. Most partners come with a business problem, not a technology plan — the strategy work is part of what we do together in the first two weeks.",
+      "No. Most partners come with a business problem, not a technology plan. The strategy work is part of what we do together in the first two weeks.",
   },
   {
     question: "How small can a first engagement be?",
@@ -80,7 +80,7 @@ export const CONTACT_FAQS: ContactFaq[] = [
   {
     question: "Do you work with universities and non-profits?",
     answer:
-      "Yes — open research, citizen science, and public-interest work is part of the constitution. Rates and structure differ from commercial engagements.",
+      "Yes. Open research, citizen science, and public-interest work is part of the constitution. Rates and structure differ from commercial engagements.",
   },
   {
     question: "What if you are not the right lab for it?",
@@ -95,7 +95,7 @@ export const CONTACT = {
     title: "Bring us a problem worth",
     /** Rendered in brand red, immediately after `title`. */
     titleAccent: "working on",
-    lede: "The most important conversations shouldn't require a login. Tell us what you're trying to decide, build, or fix — a human replies within 48 hours.",
+    lede: "The most important conversations shouldn't require a login. Tell us what you're trying to decide, build, or fix, and a human replies within 48 hours.",
     stats: [
       { value: "< 48h", label: "First reply" },
       { value: "No", label: "Login required" },
@@ -125,7 +125,7 @@ export const CONTACT = {
     location: {
       caption: "Remote-first · No head office",
       title: "Where the lab works",
-      body: "Remote-first out of India, working across timezones — we meet where your problem is.",
+      body: "Remote-first out of India, working across timezones. We meet where your problem is.",
       rows: [
         { label: "Desk hours", value: "Mon–Fri · 09:00–18:00 IST" },
         { label: "First reply", value: "Within 48 hours", accent: true },
@@ -142,6 +142,6 @@ export const CONTACT = {
     eyebrow: "Before you reach out",
     heading: "Quick answers",
     aside:
-      "Something not covered? Put it in the form — odd questions are our favourite kind.",
+      "Something not covered? Put it in the form. Odd questions are our favourite kind.",
   },
 } as const;

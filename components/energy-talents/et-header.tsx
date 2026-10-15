@@ -26,7 +26,7 @@ export function EtHeader() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1216px] items-center justify-between gap-4 px-6">
-        <Link href="/" aria-label={`${"Energy Talents"} — home`}>
+        <Link href="/" aria-label={`${"Energy Talents"} home`}>
           <EtWordmark />
         </Link>
 

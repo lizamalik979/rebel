@@ -8,7 +8,7 @@ import { WhyBuildHere } from "@/components/careers/why-build-here";
 import { faqPageJsonLd, jsonLd } from "@/lib/json-ld";
 import { OG_DEFAULTS, TWITTER_DEFAULTS } from "@/lib/seo";
 import { CAREERS } from "@/lib/careers";
-import { getRolesPage, getDisciplines, getCareersContent } from "@/lib/careers-api";
+import { getCareersContent, getRoleSummary } from "@/lib/careers-api";
 
 const description = CAREERS.hero.lede;
 
@@ -25,24 +25,14 @@ export const metadata: Metadata = {
   },
 };
 
-type Props = {
-  searchParams: Promise<{ discipline?: string; page?: string }>;
-};
-
-export default async function CareersPage({ searchParams }: Props) {
-  // The filter and page live in the URL, and are resolved HERE rather than in
-  // the client component. That keeps a deep link like
-  // /careers?discipline=Research&page=2 server-rendered — good for SEO and for
-  // first paint — and avoids useSearchParams, which on a prerendered route
-  // needs a Suspense boundary whose fallback cannot itself read the params.
-  const { discipline = "", page: pageParam } = await searchParams;
-  const page = Math.max(1, Number(pageParam) || 1);
-
-  // Roles, discipline tabs and the page copy are independent reads — fetched
-  // together so the page waits on the slowest, not the sum.
-  const [{ roles, total }, disciplines, content] = await Promise.all([
-    getRolesPage({ page, discipline }),
-    getDisciplines(),
+export default async function CareersPage() {
+  // The page deliberately does NOT read searchParams. Doing so made it dynamic,
+  // so every visit server-rendered the whole page and waited on the CMS before
+  // the first byte. Now it is prerendered from cached CMS reads (revalidated by
+  // the publish webhook) and opens instantly; <RoleBoard> reads the filter and
+  // page from the URL itself and fetches the role rows in the browser.
+  const [{ disciplines, total }, content] = await Promise.all([
+    getRoleSummary(),
     getCareersContent(),
   ]);
   const filters = disciplines.length ? ["All Roles", ...disciplines] : undefined;
@@ -58,14 +48,7 @@ export default async function CareersPage({ searchParams }: Props) {
       />
 
       <CareersHero hero={content.hero} roleCount={total} />
-      <RoleBoard
-        header={content.roles}
-        roles={roles}
-        total={total}
-        page={page}
-        discipline={discipline}
-        filters={filters}
-      />
+      <RoleBoard header={content.roles} filters={filters} />
       <WhyBuildHere perks={content.perks} />
       <CandidateFaq faq={content.faq} />
       <PipelineSection pipeline={content.pipeline} />

@@ -18,7 +18,7 @@ export const SITE = {
   linkedin: "linkedin.com/in/amigo-sharma",
   linkedinHref: "https://www.linkedin.com/in/amigo-sharma",
   tagline:
-    "An intelligence lab — researching, engineering, and democratizing intelligence.",
+    "An intelligence lab researching, engineering, and democratizing intelligence.",
 } as const;
 
 /* ── Navigation ──────────────────────────────────────────────────────────── */
@@ -118,7 +118,7 @@ export const PLATFORMS: Platform[] = [
     code: "MEM_KNW",
     visual: "memory",
     title: "Memory & Knowledge Preservation",
-    body: "Short-term context and long-term memory held as one continuous system, not two disconnected layers. Every decision leaves a trace — retrievable, connected, never rebuilt from scratch. *What forgets, relearns. What remembers, evolves.*",
+    body: "Short-term context and long-term memory held as one continuous system, not two disconnected layers. Every decision leaves a trace: retrievable, connected, never rebuilt from scratch. *What forgets, relearns. What remembers, evolves.*",
   },
   {
     num: "02",
@@ -132,7 +132,7 @@ export const PLATFORMS: Platform[] = [
     code: "COL_NET",
     visual: "collective",
     title: "Collective Intelligence Networks",
-    body: "Cross-pollinated across disciplines, cumulative across time, curated — not just aggregated. Many minds, one memory, growing sharper with every contribution. *No single participating mind, however capable, out-thinks a network that remembers.*",
+    body: "Cross-pollinated across disciplines, cumulative across time, curated rather than just aggregated. Many minds, one memory, growing sharper with every contribution. *No single participating mind, however capable, out-thinks a network that remembers.*",
   },
 ];
 
@@ -167,7 +167,7 @@ export const PILLARS: Pillar[] = [
     badge: "Pillar 02",
     kicker: "[ Customer Intelligence ]",
     title: "Customer Intelligence",
-    body: "A customer is not a segment. They're a pattern that keeps evolving — we build systems that keep up.",
+    body: "A customer is not a segment. They're a pattern that keeps evolving, and we build systems that keep up.",
     image: "/pillars/customer-intelligence.jpg",
     alt: "A network of customer profile icons radiating from an open hand",
   },
@@ -209,7 +209,7 @@ export const PRINCIPLES: Principle[] = [
     name: "Contextual Memory",
     sub: "Nothing Forgotten",
     wave: 2,
-    copy: "Data becomes information becomes memory — the *raw-to-held* foundation everything else stands on. What forgets, relearns the hard way. What remembers, evolves.",
+    copy: "Data becomes information becomes memory: the *raw-to-held* foundation everything else stands on. What forgets, relearns the hard way. What remembers, evolves.",
   },
   {
     ident: "02 // KNW_SHR · STAGE 04",
@@ -217,21 +217,21 @@ export const PRINCIPLES: Principle[] = [
     name: "Collective Knowledge",
     sub: "Multiplied, Not Hoarded",
     wave: 3,
-    copy: "Memory connects into structure — this is knowledge, and it only grows richer when it is *shared*. Given away, it multiplies. Kept to yourself, it quietly rots.",
+    copy: "Memory connects into structure. This is knowledge, and it only grows richer when it is *shared*. Given away, it multiplies. Kept to yourself, it quietly rots.",
   },
   {
     ident: "03 // LRN_CONT · STAGE 05",
     tag: "refined",
     name: "Continuous Learning",
-    sub: "Never Finished",
+    sub: "Feedback Loop and Always in Beta mode",
     wave: 4,
-    copy: "Knowledge refined by feedback, one *correction* at a time, without end. There is no final version — only the next one.",
+    copy: "Knowledge refined by feedback, one *correction* at a time, without end. There is no final version, only the next one.",
   },
   {
     ident: "04 // HAI_SYNC · STAGE 06–07",
     tag: "together",
     name: "Shared Cognition",
-    sub: "Two Minds, One Loop",
+    sub: "Many Minds, one integrated loop",
     wave: 5,
     copy: "Reasoning becomes intelligence exactly where human judgment and machine capability *meet*. Neither one is finished without the other.",
   },
@@ -241,7 +241,7 @@ export const PRINCIPLES: Principle[] = [
     name: "Reinforced Adaptation",
     sub: "Outlasts Optimization",
     wave: 8,
-    copy: "Intelligence that learns through action and consequence — reinforced by *outcome*, not frozen at the moment it was trained. Tuned for today dies the moment today ends.",
+    copy: "Intelligence that learns through action and consequence, reinforced by *outcome*, not frozen at the moment it was trained. Tuned for today dies the moment today ends.",
   },
   {
     ident: "06 // SMP_ENG · STAGE 09",
@@ -249,7 +249,7 @@ export const PRINCIPLES: Principle[] = [
     name: "Applied Simplicity",
     sub: "Subtract to Create",
     wave: 7,
-    copy: "Adaptation extended far enough becomes creativity — but only what *earns its place* survives the cut. Complexity is easy. Removing it well is the actual craft.",
+    copy: "Adaptation extended far enough becomes creativity, but only what *earns its place* survives the cut. Complexity is easy. Removing it well is the actual craft.",
   },
   {
     ident: "07 // COL_GROW · STAGE 10",
@@ -273,7 +273,7 @@ export const PRINCIPLES: Principle[] = [
     name: "Universal Access",
     sub: "Built to Reach Everyone",
     wave: 10,
-    copy: "Wisdom, finally, in service of *people* — but only if it actually gets to them. Power held by the few, however wise, was never really intelligence.",
+    copy: "Wisdom, finally, in service of *people*, but only if it actually gets to them. Power held by the few, however wise, was never really intelligence.",
   },
 ];
 
@@ -293,21 +293,21 @@ export const DIFFERENTIATORS: Differentiator[] = [
     code: "LEAN_SYS",
     kicker: "Frugal by Design",
     title: "Priced for Adoption, Not Lock-In",
-    body: "Small, efficient, affordable — measured by how well it adapts, not how much compute it burns.",
+    body: "Small, efficient, affordable, measured by how well it adapts, not how much compute it burns.",
   },
   {
     num: "02",
     code: "ADPT_VAL",
     kicker: "Living Systems",
     title: "Keeps Learning After Launch",
-    body: "Adaptive systems, not frozen software — maintainable without us, so value compounds.",
+    body: "Adaptive systems, not frozen software. Maintainable without us, so value compounds.",
   },
   {
     num: "03",
     code: "OPN_CORE",
     kicker: "Radically Open",
     title: "No Black Boxes",
-    body: "Open frameworks and shared knowledge — you own what we build, from day one.",
+    body: "Open frameworks and shared knowledge. You own what we build, from day one.",
   },
   {
     num: "04",

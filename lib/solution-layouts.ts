@@ -56,7 +56,7 @@ export const SOLUTION_LAYOUTS: SolutionLayout[] = [
     id: "reference",
     name: "Reference",
     description:
-      "Ends on the FAQ instead of an enquiry panel — for a pillar that explains rather than sells.",
+      "Ends on the FAQ instead of an enquiry panel, for a pillar that explains rather than sells.",
     sections: ["hero", "offerings", "comparison", "faq"],
   },
 ];

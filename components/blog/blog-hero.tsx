@@ -20,8 +20,7 @@ export function BlogHero({ latest }: { latest: BlogPost | null }) {
       <div className="mx-auto max-w-(--spacing-shell) px-6 pt-[clamp(96px,14vh,150px)] pb-[clamp(40px,6vh,72px)] sm:px-7">
         <div className="grid grid-cols-1 items-end gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div data-reveal>
-            <p className="mb-6 flex items-center gap-3 font-mono text-[0.66rem] tracking-[0.22em] text-brand uppercase">
-              <span aria-hidden="true" className="inline-block h-px w-8 bg-brand" />
+            <p className="mb-6 font-mono text-[0.66rem] tracking-[0.22em] text-brand uppercase">
               Blog &amp; Intelligence
             </p>
             <h1 className="max-w-[16ch] text-[clamp(2.6rem,6vw,4.6rem)] leading-[1.02] font-semibold tracking-[-0.025em] text-balance">
@@ -35,7 +34,7 @@ export function BlogHero({ latest }: { latest: BlogPost | null }) {
             data-reveal-delay="1"
             className="max-w-[42ch] text-[0.98rem] leading-[1.7] text-dark-fg-3 lg:justify-self-end lg:text-right"
           >
-            Research notes, build logs, and honest reads on adaptive systems —
+            Research notes, build logs, and honest reads on adaptive systems,
             written by the people shipping them.
           </p>
         </div>

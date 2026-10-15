@@ -213,7 +213,7 @@ export function OpenLab({ tone = "light" }: { tone?: "light" | "dark" }) {
               role="status"
               className={`mt-3.5 font-mono text-[0.72rem] ${dark ? "text-dark-fg-2" : "text-light-fg-2"}`}
             >
-              [ received — thanks {name.trim().split(" ")[0]}, a human will reply
+              [ received, thanks {name.trim().split(" ")[0]}, a human will reply
               to {email.trim()} ]
             </p>
           )}

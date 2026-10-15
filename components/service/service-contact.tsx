@@ -45,7 +45,7 @@ export function ServiceContact({
 
           <p className="mt-7 max-w-[46ch] text-[clamp(1rem,1.5vw,1.22rem)] leading-relaxed text-dark-fg-3">
             Bring us the decision you&apos;re stuck on. We scope fast, ship a
-            working pilot in weeks, and measure success against your outcome —
+            working pilot in weeks, and measure success against your outcome,
             not our hours.
           </p>
 

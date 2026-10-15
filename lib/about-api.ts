@@ -152,7 +152,7 @@ export async function getAboutContent(): Promise<AboutContent> {
     if (isAboutContent(content)) return content;
 
     if (content) {
-      console.error("[about] CMS returned an unrecognised shape — using shipped copy");
+      console.error("[about] CMS returned an unrecognised shape; using shipped copy");
     }
     return FALLBACK;
   } catch (error) {

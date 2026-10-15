@@ -72,17 +72,17 @@ export const ROLES: Role[] = [
   {
     slug: "applied-research-scientist-memory-systems",
     discipline: "Research",
-    title: "Applied Research Scientist — Memory Systems",
+    title: "Applied Research Scientist, Memory Systems",
     meta: "Remote · Contract",
     posted: "2 days ago",
     comp: "$140–190k /yr",
     featured: true,
     summary:
-      "Own the research thesis behind the memory core — the layer that holds short-term context and long-term memory as one continuous system rather than two disconnected ones. You will decide what the lab believes about retention, retrieval, and forgetting, and prove it on real partner data.",
+      "Own the research thesis behind the memory core: the layer that holds short-term context and long-term memory as one continuous system rather than two disconnected ones. You will decide what the lab believes about retention, retrieval, and forgetting, and prove it on real partner data.",
     responsibilities: [
       "Design and run experiments on retention, retrieval, and decay across partner deployments",
       "Turn findings into architecture the engineering team can ship, not just papers",
-      "Define the benchmarks we publish — including the ones that make us look bad",
+      "Define the benchmarks we publish, including the ones that make us look bad",
       "Sit directly with design partners to see where memory actually breaks",
     ],
     requirements: [
@@ -95,17 +95,17 @@ export const ROLES: Role[] = [
   {
     slug: "senior-systems-engineer-reasoning-engines",
     discipline: "Engineering",
-    title: "Senior Systems Engineer — Reasoning Engines",
+    title: "Senior Systems Engineer, Reasoning Engines",
     meta: "Remote · Full-time",
     posted: "3 days ago",
     comp: "$130–175k /yr",
     featured: true,
     summary:
-      "Build the reasoning layer that updates with context instead of freezing at training time — and keep the cost-performance tradeoff honest while the problem shifts underneath it.",
+      "Build the reasoning layer that updates with context instead of freezing at training time, and keep the cost-performance tradeoff honest while the problem shifts underneath it.",
     responsibilities: [
       "Own the reasoning-engine architecture end to end, from interface to inference budget",
       "Instrument every decision path so it stays logged, replayable, and auditable",
-      "Hold the line on frugal compute — measured, not asserted",
+      "Hold the line on frugal compute: measured, not asserted",
       "Take pilots from first working version to production inside a partner perimeter",
     ],
     requirements: [
@@ -123,7 +123,7 @@ export const ROLES: Role[] = [
     posted: "4 days ago",
     comp: "$120–160k /yr",
     summary:
-      "Build the reusable agent mesh that gets deployed once and shared across business units — scoped permissions, replayable audit trails, and a second use case that ships in a fraction of the time the first did.",
+      "Build the reusable agent mesh that gets deployed once and shared across business units, with scoped permissions, replayable audit trails, and a second use case that ships in a fraction of the time the first did.",
     responsibilities: [
       "Design agent topologies that survive contact with real enterprise systems",
       "Implement scoped permissions and replayable audit trails as first-class features",
@@ -132,7 +132,7 @@ export const ROLES: Role[] = [
     ],
     requirements: [
       "Production experience with multi-agent or tool-using systems",
-      "Strong integration instincts — queues, webhooks, legacy APIs, awkward data",
+      "Strong integration instincts: queues, webhooks, legacy APIs, awkward data",
       "Care for failure modes, retries, and what happens when an agent is wrong",
       "Able to work hybrid from NYC",
     ],
@@ -147,7 +147,7 @@ export const ROLES: Role[] = [
     summary:
       "Run every pilot from scope to production, hands-on. You are the person who makes a four-to-six week pilot actually land, and who tells us early when it will not.",
     responsibilities: [
-      "Own pilot delivery end to end — scope, timeline, and the outcome it is measured against",
+      "Own pilot delivery end to end: scope, timeline, and the outcome it is measured against",
       "Keep partners informed with real status, not managed status",
       "Turn every deployment into a repeatable playbook for the next one",
       "Escalate problems while they are still small",
@@ -170,7 +170,7 @@ export const ROLES: Role[] = [
       "A six-month residency on the open question behind the whole lab: how knowledge compounds across organizations instead of dying inside one of them.",
     responsibilities: [
       "Investigate how curated cross-organization knowledge outperforms aggregation",
-      "Publish openly — frameworks, benchmarks, and negative results alike",
+      "Publish openly: frameworks, benchmarks, and negative results alike",
       "Prototype with public-research and citizen-science partners",
       "Leave behind something the lab keeps using after the residency ends",
     ],
@@ -189,7 +189,7 @@ export const ROLES: Role[] = [
     posted: "1 week ago",
     comp: "$125–165k /yr",
     summary:
-      "Make intelligence affordable. This role exists because the lab measures itself on how well a system adapts, not how much compute it burns — and someone has to hold that number.",
+      "Make intelligence affordable. This role exists because the lab measures itself on how well a system adapts, not how much compute it burns, and someone has to hold that number.",
     responsibilities: [
       "Profile and cut compute overhead across the memory core and reasoning engines",
       "Publish the frugal-compute benchmark, including where we fall short",
@@ -197,7 +197,7 @@ export const ROLES: Role[] = [
       "Push back on architecture that buys capability at an unjustifiable cost",
     ],
     requirements: [
-      "Performance engineering depth — profiling, quantization, kernel-level curiosity",
+      "Performance engineering depth: profiling, quantization, kernel-level curiosity",
       "Experience trading model quality against cost with real numbers",
       "Scepticism toward benchmarks, including your own",
       "Willingness to publish results that are inconvenient",
@@ -233,16 +233,16 @@ export const ROLES: Role[] = [
     posted: "2 weeks ago",
     comp: "$70–90k /yr",
     summary:
-      "Run the candidate desk. We promise every applicant a reply within one business day at every stage — you are the reason that promise holds.",
+      "Run the candidate desk. We promise every applicant a reply within one business day at every stage. You are the reason that promise holds.",
     responsibilities: [
       "Reply to every candidate within one business day, at every stage",
       "Match pipeline registrations to roles as they open, across disciplines",
-      "Coordinate trial projects — short, paid, from the real backlog",
+      "Coordinate trial projects: short, paid, from the real backlog",
       "Keep the hiring process as transparent as the constitution claims it is",
     ],
     requirements: [
       "Recruiting coordination or people-ops experience",
-      "Genuinely good written communication — candidates read every word",
+      "Genuinely good written communication, because candidates read every word",
       "Organised enough that nobody falls through a gap",
       "Care about candidate experience even when the answer is no",
     ],
@@ -252,7 +252,7 @@ export const ROLES: Role[] = [
 export const PERKS: Perk[] = [
   {
     title: "Fair, transparent equity",
-    desc: "Every hire gets equity banded by level and published internally — no negotiation games.",
+    desc: "Every hire gets equity banded by level and published internally. No negotiation games.",
   },
   {
     title: "Remote-first, always",
@@ -260,19 +260,19 @@ export const PERKS: Perk[] = [
   },
   {
     title: "Direct access to research",
-    desc: "No layers between you and the problem — talk to the founders, week one.",
+    desc: "No layers between you and the problem. Talk to the founders, week one.",
   },
   {
     title: "A real learning budget",
-    desc: "Conference, course, or compute — your call, funded every quarter.",
+    desc: "Conference, course, or compute: your call, funded every quarter.",
   },
   {
     title: "Measured on outcomes",
-    desc: "No hours logged, no busywork theater — just what shipped.",
+    desc: "No hours logged, no busywork theater, just what shipped.",
   },
   {
     title: "Long-term, not headcount",
-    desc: "We hire for years, not sprints — pipeline and continuity, not churn.",
+    desc: "We hire for years, not sprints: pipeline and continuity, not churn.",
   },
 ];
 
@@ -280,7 +280,7 @@ export const CANDIDATE_FAQS: CandidateFaq[] = [
   {
     question: "Do I need to apply for every role separately?",
     answer:
-      "No — register once with your background and we'll match you to every relevant role as it opens, across every discipline.",
+      "No. Register once with your background and we'll match you to every relevant role as it opens, across every discipline.",
   },
   {
     question: "Is this fully remote?",
@@ -290,12 +290,12 @@ export const CANDIDATE_FAQS: CandidateFaq[] = [
   {
     question: "How is equity decided?",
     answer:
-      "Banded by level and published internally — the same offer for everyone at that level, no back-room negotiating.",
+      "Banded by level and published internally: the same offer for everyone at that level, no back-room negotiating.",
   },
   {
     question: "What does the trial project look like?",
     answer:
-      "A short, paid, real problem from our actual backlog — typically one to two weeks, on your own schedule.",
+      "A short, paid, real problem from our actual backlog, typically one to two weeks, on your own schedule.",
   },
   {
     question: "How quickly will I hear back?",
@@ -309,7 +309,7 @@ export const CAREERS = {
     title: "The work behind adaptive",
     /** Rendered in brand red, immediately after `title`. */
     titleAccent: "intelligence",
-    lede: "Research, engineering, and applied roles building systems that adapt — remote-first, open by design, measured on outcomes, never on hours logged.",
+    lede: "Research, engineering, and applied roles building systems that adapt: remote-first, open by design, measured on outcomes, never on hours logged.",
     cta: { label: "Browse open roles", href: "#roles" },
   },
   roles: {
@@ -322,7 +322,7 @@ export const CAREERS = {
     eyebrow: "Why Build Here",
     heading: "More than a job. A lab you help write",
     aside:
-      "The friction most labs tolerate, we removed on purpose — so the work is what's left.",
+      "The friction most labs tolerate, we removed on purpose, so the work is what's left.",
   },
   faq: {
     eyebrow: "Before You Apply",

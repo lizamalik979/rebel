@@ -300,6 +300,21 @@ export async function getRole(slug: string): Promise<Role | null> {
 }
 
 /**
+ * Discipline tabs plus the total open-role count, for the static parts of the
+ * careers page (filter chips and the hero's "N open roles").
+ *
+ * Reads the same cached URL as getDisciplines(), so it costs no extra request.
+ * The role rows themselves are fetched in the browser by <RoleBoard>.
+ */
+export async function getRoleSummary(): Promise<{ disciplines: string[]; total: number }> {
+  const data = await getJson<RolesResponse>("/api/careers/client", "career-list");
+  return {
+    disciplines: data?.filters?.categories ?? [],
+    total: data?.pagination?.totalCount ?? data?.total ?? data?.roles?.length ?? 0,
+  };
+}
+
+/**
  * Discipline tabs, in the order configured in the CMS.
  *
  * Falls back to the static DISCIPLINES union if the CMS is unreachable, so the

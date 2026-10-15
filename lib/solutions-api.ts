@@ -152,7 +152,7 @@ export async function getSolutionPage(slug: string): Promise<SolutionPage | null
   }
 
   if (content) {
-    console.error(`[solutions] "${slug}" has an unrecognised content shape — ignoring`);
+    console.error(`[solutions] "${slug}" has an unrecognised content shape; ignoring`);
   }
   return null;
 }

@@ -118,7 +118,7 @@ export function ApplyForm({ role }: { role: Role }) {
             Application received
           </p>
           <h2 className="text-[1.5rem] font-semibold tracking-[-0.015em]">
-            Thanks{firstName && `, ${firstName}`} — that&apos;s in.
+            Thanks{firstName && `, ${firstName}`}, that&apos;s in.
           </h2>
           <p className="text-[0.92rem] leading-relaxed text-light-fg-2">
             Your application for {role.title} is with the candidate desk
